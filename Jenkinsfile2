@@ -25,8 +25,8 @@ pipeline {
                     "http://44.204.11.51:8081/artifactory/geoapp/"'
             }
         }
-        stage('image build'){
-            steps{
+        stage('image build') {
+            steps {
                 sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 259980535322.dkr.ecr.us-east-1.amazonaws.com'
                 sh 'docker build -t geoapp.'
             }
